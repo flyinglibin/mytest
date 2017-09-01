@@ -9,22 +9,22 @@ package pageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-
 import pagePath.PageElementPath;
 
 public class BaiduIndexPage extends PageElementPath{
 	// click the search area
-	public void click_Search_Bar(WebDriver driver){
-		driver.findElement(By.id(search_box_id)).click();
+	public void click_Search_Bar(WebDriver driver)throws Exception{
+		driver.findElement(By.id(search_bar_id)).click();
+		System.out.println("focus on sucess... ");
 	}
 	//input search text
 	public void input_Search_Box(WebDriver driver , String key_word){
 		driver.findElement(By.id(search_box_id)).clear();
 		driver.findElement(By.id(search_box_id)).sendKeys(key_word);
+		System.out.println("百度输入框成功输入内容：" + key_word);
 	}
 	public void click_Search_Button(WebDriver driver){
-		driver.findElement(By.name(search_button_name)).click();
+		driver.findElement(By.id(search_button_id)).click();
 		System.out.println("click 百度一下，sucessful。。。");
 	}
 }

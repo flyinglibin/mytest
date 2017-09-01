@@ -53,6 +53,8 @@ public class UseBrowser{
 		dc.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 		driver = new InternetExplorerDriver(dc);
 		driver.get(test_url);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
 	}
 	public void teardownBrowser(){
