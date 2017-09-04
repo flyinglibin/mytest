@@ -35,7 +35,7 @@ public class TestCase2 {
 		assertTrue(baidu.get_page_title().equals("测试方案_百度搜索"));
 		Thread.sleep(10000);
 	}
-// ��������	
+// 数据驱动	
 	@DataProvider(name="searchData")
 	public static Object[][] data(){
 		return new Object[][]{
