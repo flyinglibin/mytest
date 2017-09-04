@@ -1,14 +1,8 @@
 /**
- * 
- */
-/**
- * @author libin
- *
+ * auth by libn
  */
 package testCase;
 
-
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -19,43 +13,21 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import commonObject.*;
-import pageObject.*;
+import pageObject.BaiduIndexPage1;
+import pageObject.InitPage;
 
-public class TestCase1{
-	BaiduIndexPage page = new BaiduIndexPage();
-	UseBrowser ub = new UseBrowser();
-	 
-	WebDriver driver;
+public class TestCase2 {
+	public InitPage initPage;
+	public BaiduIndexPage1 baidu;
+	
 	@Test
-	public void test_baidu() throws Exception {
-		System.out.println("test_baidu start...");
-		page.click_Search_Bar(driver);
+	public void baidu_test()throws Exception{
+		baidu.click_Search_Button();
+		Thread.sleep(1000);
+		baidu.input_Search_Box("测试方案");
+		Thread.sleep(1000);
+		baidu.click_Search_Button();
 		Thread.sleep(10000);
-		page.input_Search_Box(driver,"PageObject 设计模式");
-		Thread.sleep(10000);
-		page.click_Search_Button(driver);
-		
-	}
-	@Test
-	public void test_baidu1() throws Exception {
-		System.out.println("test_baidu start...");
-		page.click_Search_Bar(driver);
-		Thread.sleep(10000);
-		page.input_Search_Box(driver,"selenium");
-		Thread.sleep(10000);
-		page.click_Search_Button(driver);
-		
-	}
-	@Test
-	public void test_baidu2() throws Exception {
-		System.out.println("test_baidu start...");
-		page.click_Search_Bar(driver);
-		Thread.sleep(10000);
-		page.input_Search_Box(driver,"testng");
-		Thread.sleep(10000);
-		page.click_Search_Button(driver);
-		
 	}
 	@BeforeMethod
 	public void BeforeMethod(){
@@ -83,14 +55,14 @@ public class TestCase1{
 	}
 	@BeforeSuite
 	public void BeforeSuite(){
-//		ub.setupChrome("http://www.baidu.com");
-//		ub.setupFirefox("http://www.baidu.com");
-		driver = ub.setupIE("http://www.baidu.com");
+		//初始化百度页面
+		initPage = new InitPage("http://www.baidu.com");
+		baidu = initPage.get_BaiduIndexPage1();
 		System.out.println("BeforeSuite sucess...");
 	}
 	@AfterSuite
 	public void afterSuite(){
-		ub.teardownBrowser();
+        initPage.teardownBrowser();
 		System.out.println("AfterSuite sucess...");
 	}
 }
