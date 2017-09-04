@@ -21,10 +21,10 @@ public class BaiduIndexPage extends PageElementPath{
 	public void input_Search_Box(WebDriver driver , String key_word){
 		driver.findElement(By.id(search_box_id)).clear();
 		driver.findElement(By.id(search_box_id)).sendKeys(key_word);
-		System.out.println("°Ù¶ÈÊäÈë¿ò³É¹¦ÊäÈëÄÚÈİ£º" + key_word);
+		System.out.println("ç™¾åº¦è¾“å…¥æ¡†æˆåŠŸè¾“å…¥å†…å®¹ï¼š" + key_word);
 	}
 	public void click_Search_Button(WebDriver driver){
 		driver.findElement(By.id(search_button_id)).click();
-		System.out.println("click °Ù¶ÈÒ»ÏÂ£¬sucessful¡£¡£¡£");
+		System.out.println("click ç™¾åº¦ä¸€ä¸‹ï¼Œsucessfulã€‚ã€‚ã€‚");
 	}
 }

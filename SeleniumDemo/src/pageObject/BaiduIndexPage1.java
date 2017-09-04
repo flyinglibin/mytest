@@ -7,7 +7,6 @@
  */
 package pageObject;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -24,17 +23,25 @@ public class BaiduIndexPage1 extends PageElementPath{
 	@FindBy(id = search_button_id)
 	private WebElement search_button;
 	
+	private String search_pageTitle_suffix = "_ç™¾åº¦æœç´¢";
+	private String pageTitle = "ç™¾åº¦ä¸€ä¸‹ï¼Œä½ å°±çŸ¥é“";
+	
+	public String get_page_title(){
+		return pageTitle;
+	}
 	public void click_Search_Bar(){
 		search_bar.click();
 		System.out.println("focus on sucess... ");
 	}
 	//input search text
 	public void input_Search_Box( String key_word){
+		search_box.clear();
 		search_box.sendKeys(key_word);
-		System.out.println("°Ù¶ÈÊäÈë¿ò³É¹¦ÊäÈëÄÚÈİ£º" + key_word);
+		System.out.println("ç™¾åº¦è¾“å…¥æ¡†æˆåŠŸè¾“å…¥å†…å®¹ï¼š" + key_word);
+		pageTitle = key_word + search_pageTitle_suffix;
 	}
 	public void click_Search_Button(){
 		search_button.click();
-		System.out.println("click °Ù¶ÈÒ»ÏÂ£¬sucessful¡£¡£¡£");
+		System.out.println("click ç™¾åº¦ä¸€ä¸‹ sucessfulã€‚ã€‚ã€‚");
 	}
 }

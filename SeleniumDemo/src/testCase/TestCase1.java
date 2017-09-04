@@ -32,7 +32,7 @@ public class TestCase1{
 		System.out.println("test_baidu start...");
 		page.click_Search_Bar(driver);
 		Thread.sleep(10000);
-		page.input_Search_Box(driver,"PageObject 设计模式");
+		page.input_Search_Box(driver,"PageObject 妯″紡");
 		Thread.sleep(10000);
 		page.click_Search_Button(driver);
 		
