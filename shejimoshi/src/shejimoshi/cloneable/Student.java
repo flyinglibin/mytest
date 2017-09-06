@@ -8,6 +8,10 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class Student implements Cloneable,Serializable  {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private int age;
 	private Professor p;
@@ -60,6 +64,10 @@ public class Student implements Cloneable,Serializable  {
 }
 
 class Professor implements Cloneable,Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private int age;
 	public Professor(){}
