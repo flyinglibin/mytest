@@ -22,3 +22,5 @@ http://blog.csdn.net/doymm2008/article/details/13288067
 -------------无继承
 观察者模式 观察者
 迭代器  iterator
+责任链模式
+命令模式
